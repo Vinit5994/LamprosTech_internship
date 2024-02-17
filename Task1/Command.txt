@@ -1,0 +1,5 @@
+enqueue Task1 2
+enqueue Task2 1
+dequeue
+enqueue Task3 3
+dequeue
