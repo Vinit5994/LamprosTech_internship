@@ -8,15 +8,15 @@ const rl = readline.createInterface({
 var mongoose = require('mongoose');
 var {Schema} = mongoose;
 
-mongoose.connect('mongodb+srv://vinitpithadiya07:Tiniv07@cluster0.x2ehc8u.mongodb.net/');
+mongoose.connect('mongodb+srv://vinitpithadiya07:Tiniv07@cluster0.kbt4lgk.mongodb.net/');
 
 const schema = new Schema({
     _id: Number,
-    name: String ,
-    surname: String
+    Bookname: String ,
+    description: String
 });
 
-const Model =  mongoose.model('Test', schema);
+const Model =  mongoose.model('LibraryData', schema);
 
 
     console.log("-----library----");
@@ -28,8 +28,8 @@ const Model =  mongoose.model('Test', schema);
                             rl.question("Description  ", async(des) => {
                                 const addBook = await Model.create({
                                     _id : _id ,
-                                    name :book,
-                                    surname: des
+                                    Bookname :book,
+                                    description: des
                                 })
                             addBook.save();
                             // res.json("added")
@@ -45,8 +45,8 @@ const Model =  mongoose.model('Test', schema);
                         rl.question("update book description ", async (des)=>{
                            var idToUpdate = await Model.find({_id : id});
                             console.log(idToUpdate[0].name)
-                           await Model.updateOne({name : idToUpdate[0].name }, {name : book});
-                           await Model.updateOne({surname: idToUpdate[0].surname},{surname:des});
+                           await Model.updateOne({Bookname : idToUpdate[0].Bookname }, {Bookname : book});
+                           await Model.updateOne({description: idToUpdate[0].description},{description:des});
                            console.log("updated");
                             })
                         })
