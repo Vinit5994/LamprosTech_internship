@@ -129,7 +129,7 @@ app.delete('/api/users/:id', verifyToken, async (req, res) => {
                         res.status(200).send({ message: "User not found!" });
                     } else {
 
-                        res.send("deleted")
+                        res.send("deleted !")
                     }
                 }
             })

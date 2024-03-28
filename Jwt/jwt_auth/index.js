@@ -15,7 +15,7 @@ app.post('/register', (req, res) => {
   }
 
   users.push(user);
-  res.send("save successfully")
+  res.send("save successfully !")
 })
 
 function authenticateUser(email, password) {
