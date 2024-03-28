@@ -66,7 +66,7 @@ app.get('/api/users/:id', verifyToken, async (req, res) => {
                     const user = await User.findOne({ _id: userId });
                     if (!user) {
                         return res.send({ message: "User not found with this id!" });
-                    }else{
+                    } else {
 
                         res.json(user);
                     }
@@ -136,8 +136,8 @@ app.delete('/api/users/:id', verifyToken, async (req, res) => {
         } catch (error) {
             res.status(500).json({ message: "internal server error" })
         }
-    } else {    
-        res.send("not have access")
+    } else {
+        res.send("not have access to delete")
     }
 
 })
